@@ -32,8 +32,8 @@
       <!-- partial:partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <h1 class="sidebar-brand brand-logo" href="index.html"> Códigos DDD</h1>
-          <h1 class="sidebar-brand brand-logo-mini" href="index.html"> DDD </h1>
+          <a class="sidebar-brand brand-logo" href="{% url 'home' %}"> Códigos DDD</a>
+          <a class="sidebar-brand brand-logo-mini" href="{% url 'home' %}"> DDD </a>
         </div>
         <ul class="nav">
           {% if user.is_authenticated %}
@@ -133,13 +133,8 @@
                         <img src={% static "images/dashboard/Group126@2x.png" %} class="gradient-corona-img img-fluid" alt="">
                       </div>
                       <div class="col-5 col-sm-7 col-xl-8 p-0">
-                        <h4 class="mb-1 mb-sm-0">Want even more features?</h4>
-                        <p class="mb-0 font-weight-normal d-none d-sm-block">Check out our Pro version with 5 unique layouts!</p>
-                      </div>
-                      <div class="col-3 col-sm-2 col-xl-2 ps-0 text-center">
-                        <span>
-                          <a href="https://www.bootstrapdash.com/product/corona-admin-template/" target="_blank" class="btn btn-outline-light btn-rounded get-started-btn">Upgrade to PRO</a>
-                        </span>
+                        <h4 class="mb-1 mb-sm-0">Discagem direta a distância</h4>
+                        <p class="mb-0 font-weight-normal d-none d-sm-block">Sistema empregado para ligações interurbanas a partir da inserção de prefixos regionais.</p>
                       </div>
                     </div>
                   </div>
