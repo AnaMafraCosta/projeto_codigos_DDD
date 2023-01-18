@@ -66,10 +66,17 @@
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
+              {% if user.is_authenticated %}
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{% url 'listaddd' %}">Gerenciar DDDs</a></li>
                 <li class="nav-item"> <a class="nav-link" href="{% url 'createddd'%}">Criar DDD</a></li>
               </ul>
+              {% else %}
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'login' %}">Gerenciar DDDs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'login'%}">Criar DDD</a></li>
+              </ul>
+              {% endif %}
             </div>
           </li>
           <li class="nav-item menu-items">
