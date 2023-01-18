@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title"> Listagem DDDs </h4>
+          <div class="table-responsive">
+            {% if listatotal %}
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>DDD</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                  </tr>
+                </thead>
+                <tbody>
+            {% for ddd in listatotal %}
+                  <tr>
+                    <td>{{ddd.id}}</td>
+                    <td>{{ddd.ddd}}</td>
+                    <td>{{ddd.cidade}}</td>
+                    <td>{{ddd.estado}}</td>
+                  </tr>
+            {% endfor %}
+                </tbody> 
+                </table>
+    {% else %}
+        <h4>Sem Registros</h4>
+    {% endif %}
+        </br>
+        <a href="{% url 'home' %}" class="badge badge-outline-success">Retornar </a> 
+    </div>        
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

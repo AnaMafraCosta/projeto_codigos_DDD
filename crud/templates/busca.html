@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Listagem dos Registros Encontrados</h4>
+          <div class="table-responsive">
+          {% if resultados %}
+          <table class="table">
+          <tr>
+            <th>ID</th>
+            <th>DDD</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+          </tr>
+          <tbody>
+          {% for ddd in resultados %}
+          <tr>
+            <td>{{ddd.id}}</td>
+            <td>{{ddd.ddd}}</td>
+            <td>{{ddd.cidade}}</td>
+            <td>{{ddd.estado}}</td>
+          </tr>
+          {% endfor %}
+          </tbody> 
+          </table>
+          {% else %}
+          <h4>Sem Registros</h4>
+          {% endif %}
+        </br>
+          <a href="{% url 'home' %}" class="badge badge-outline-success">Retornar </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

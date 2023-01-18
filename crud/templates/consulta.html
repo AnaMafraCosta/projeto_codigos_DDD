@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <form action="{% url 'busca' %}" method="get" class="nav-link mt-2 mt-md-0 d-none d-lg-flex search"> 
+            <input name="busca" class="form-control" placeholder="Digite um DDD">
+            &nbsp&nbsp
+            <button type="submit" class="nav-link btn btn-success create-new-button">Buscar DDD</button> 
+            </form> 
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

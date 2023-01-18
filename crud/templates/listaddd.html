@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title"> Gerenciar DDDs </h4>
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <td>id</td>
+                <td>DDD</td>
+                <td>Cidade</td>
+                <td>Estado</td>
+                <td>Ações</td>
+              </tr>
+            
+              {% for ddd in ddd_chave %}
+              <tr>
+                <td>{{ ddd.id}}</td>
+                <td>{{ ddd.ddd}}</td>
+                <td>{{ ddd.cidade}}</td>
+                <td>{{ ddd.estado}}</td>
+                <td> 
+                    <a href="{% url 'url_atualizar_ddd' ddd.id %}" class="badge badge-outline-success"> editar </a>
+                    <a href="{% url 'url_deletar_ddd' ddd.id %}" class="badge badge-outline-success"> deletar </a>
+                </td>
+              </tr>
+              {% endfor %}
+            </table>
+        </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-9">
+          <div class="d-flex align-items-center align-self-start">
+            <h3 class="mb-0">Faça o seu login!</h3>
+          </div>
+        </div>
+      </div>
+      <h6 class="text-muted font-weight-normal">Acesso Restrito</h6>
+    </div>
+  </div>
+{% endif %}
+{% endblock %}
